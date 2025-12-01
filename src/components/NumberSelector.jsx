@@ -31,7 +31,10 @@ export default NumberSelector;
 const NumberSelectorContainer = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: end;
+  align-items: center;   /* 🔥 MOST IMPORTANT FIX */
+  margin:0 auto;
+  width: 100%;           /* 🔥 Keeps everything centered */
+  text-align: center;
 
   .error {
     color: red;
@@ -41,6 +44,9 @@ const NumberSelectorContainer = styled.div`
   .flex {
     display: flex;
     gap: 24px;
+    flex-wrap: wrap;         /* 🔥 Automatically fixes wrapping */
+    justify-content: center; /* 🔥 Center numbers ALWAYS */
+    width: 100%;
   }
 
   p {
@@ -48,56 +54,36 @@ const NumberSelectorContainer = styled.div`
     font-weight: 700;
   }
 
-  /* -------------------------------
-        📱 Tablet View (max-width: 1024px)
-  --------------------------------*/
+  /* Tablet */
   @media (max-width: 1024px) {
     .flex {
       gap: 18px;
     }
-
     p {
       font-size: 22px;
     }
   }
 
-  /* -------------------------------
-        📱 Mobile View (max-width: 768px)
-  --------------------------------*/
+  /* Mobile */
   @media (max-width: 768px) {
-    align-items: center;
-    text-align: center;
-
-    .flex {
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 16px;
-    }
-
     p {
       font-size: 20px;
     }
+    .flex {
+      gap: 16px;
+    }
   }
 
-  /* -------------------------------
-        📱 Small Mobile View (max-width: 480px)
-  --------------------------------*/
+  /* Small Mobile */
   @media (max-width: 480px) {
-    .flex {
-      gap: 12px;
-    }
-
     p {
       font-size: 18px;
     }
+    .flex {
+      gap: 12px;
+    }
   }
 `;
-
-
-
-
-
 
 
 const Box = styled.div`
@@ -113,36 +99,24 @@ const Box = styled.div`
   background-color: ${(props) => (props.isSelected ? "black" : "white")};
   color: ${(props) => (!props.isSelected ? "black" : "white")};
 
-  /* -------------------------------
-        📱 Tablet (max-width: 1024px)
-  --------------------------------*/
   @media (max-width: 1024px) {
     height: 65px;
     width: 65px;
     font-size: 22px;
   }
 
-  /* -------------------------------
-        📱 Mobile (max-width: 768px)
-  --------------------------------*/
   @media (max-width: 768px) {
     height: 60px;
     width: 60px;
     font-size: 20px;
   }
 
-  /* -------------------------------
-        📱 Small Mobile (max-width: 480px)
-  --------------------------------*/
   @media (max-width: 480px) {
     height: 52px;
     width: 52px;
     font-size: 18px;
   }
 
-  /* -------------------------------
-        📱 Extra Small Phones (max-width: 360px)
-  --------------------------------*/
   @media (max-width: 360px) {
     height: 45px;
     width: 45px;

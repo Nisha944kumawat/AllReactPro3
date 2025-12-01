@@ -64,13 +64,27 @@ const resetScore=()=>{
 export default GamePlay;
 
 const MainContainer = styled.main`
-  padding-top: 70px;
+  padding-top: 10px;
 
-  .top_section {
-    display: flex;
-    justify-content: space-around;
-    align-items: end;
-  }
+  /* 🔥 Most Important fix */
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* centers everything */
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+
+
+.top_section {
+  display: flex;
+  flex-direction: column;   /* 🔥 Score + Number selector VERTICAL */
+  align-items: center;      /* 🔥 Perfect center */
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  min-height: 200px;
+}
+
 
   .btns {
     margin-top: 40px;
@@ -86,8 +100,9 @@ const MainContainer = styled.main`
   --------------------------------*/
   @media (max-width: 1024px) {
     .top_section {
-      justify-content: space-between;
+      justify-content: center;
       padding: 0 20px;
+      gap: 30px;
     }
   }
 
@@ -97,8 +112,6 @@ const MainContainer = styled.main`
   @media (max-width: 768px) {
     .top_section {
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
       gap: 20px;
       text-align: center;
     }

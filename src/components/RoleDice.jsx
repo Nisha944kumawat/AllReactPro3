@@ -34,10 +34,13 @@ export default RoleDice;
 
 
 const DiceContainer = styled.div`
-  align-items: center;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  margin-top: 48px;
+  align-items: center;
+  justify-content: center;  /* 🔥 Fixes center alignment on all devices */
+  margin-top: 20px;
+  text-align: center;
 
   p {
     font-size: 24px;
@@ -46,31 +49,30 @@ const DiceContainer = styled.div`
 
   .dice {
     cursor: pointer;
-    width: 150px;  /* default desktop size */
+    justify-content: center;/* 🔥 Force center even if parent shifts */
+    display: flex;
+    align-items: center;
   }
-
-  /* -------------------------------
-        📱 Tablet (max-width: 1024px)
-  --------------------------------*/
+  .dice img {
+  width: 150px;
+  display: block;
+}
+  /* Tablet */
   @media (max-width: 1024px) {
     p {
       font-size: 22px;
     }
-
     .dice {
       width: 130px;
     }
   }
 
-  /* -------------------------------
-        📱 Mobile (max-width: 768px)
-  --------------------------------*/
+  /* Mobile */
   @media (max-width: 768px) {
     margin-top: 32px;
 
     p {
       font-size: 20px;
-      text-align: center;
     }
 
     .dice {
@@ -78,31 +80,23 @@ const DiceContainer = styled.div`
     }
   }
 
-  /* -------------------------------
-        📱 Small Mobile (max-width: 480px)
-  --------------------------------*/
+  /* Small Mobile */
   @media (max-width: 480px) {
     p {
       font-size: 18px;
     }
-
     .dice {
       width: 90px;
     }
   }
 
-  /* -------------------------------
-        📱 Extra Small Mobile (max-width: 360px)
-  --------------------------------*/
+  /* Extra Small */
   @media (max-width: 360px) {
     p {
       font-size: 16px;
     }
-
     .dice {
       width: 75px;
     }
   }
 `;
-
-
