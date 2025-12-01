@@ -63,20 +63,61 @@ const resetScore=()=>{
 
 export default GamePlay;
 
-const MainContainer=styled.main`
-padding-top:70px;
-.top_section{
-  display:flex;
-  justify-content:space-around;
-  align-items:end;
+const MainContainer = styled.main`
+  padding-top: 70px;
 
-}
-.btns{
-  margin-top:40px;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  gap:10px;
-}
+  .top_section {
+    display: flex;
+    justify-content: space-around;
+    align-items: end;
+  }
+
+  .btns {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  /* -------------------------------
+      📱 Tablet View (768px - 1024px)
+  --------------------------------*/
+  @media (max-width: 1024px) {
+    .top_section {
+      justify-content: space-between;
+      padding: 0 20px;
+    }
+  }
+
+  /* -------------------------------
+      📱 Mobile View (<768px)
+  --------------------------------*/
+  @media (max-width: 768px) {
+    .top_section {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      text-align: center;
+    }
+
+    .btns {
+      margin-top: 20px;
+      gap: 12px;
+      width: 100%;
+    }
+  }
+
+  /* -------------------------------
+      📱 Small Mobile (<480px)
+  --------------------------------*/
+  @media (max-width: 480px) {
+    padding-top: 50px;
+
+    .btns {
+      gap: 15px;
+    }
+  }
 `;
